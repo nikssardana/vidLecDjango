@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <title>{% block title %}My Base Template{% endblock %}</title>
+
+    <link rel = "stylesheet" type = "text/css" href = "{% static 'assets/css/default.css' %}">
+
+</head>
+
+<body>
+    {% block content %}
+    <p>This is a sample content line that can be overwritten by a template that will extend it.</p>
+    {% endblock %}
+    <p>This is the text that is present in the base template that will be displayed as it is in the extended template.</p>
+
+    <img src = "{% static 'assets/images/dark-desktop-good.jpg' %}" width = "200"/>
+</body>
+</html>
