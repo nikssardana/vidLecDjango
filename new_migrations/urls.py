@@ -22,4 +22,10 @@ urlpatterns = [
     url(r'^language/(?P<language>[a-z\-]+)/$','articles.views.language'),
     #\- is for '-' eg in en-gb
 
+    url(r'^accounts/login/$','new_migrations.views.login'),
+    url(r'^accounts/auth/$','new_migrations.views.auth_view'),
+    url(r'^accounts/logout/$','new_migrations.views.logout'),
+    url(r'^accounts/loggedin/$','new_migrations.views.loggedin'),
+    url(r'^accounts/invalid/$','new_migrations.views.invalid_login'),
+
 ]

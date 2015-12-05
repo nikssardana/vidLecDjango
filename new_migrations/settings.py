@@ -57,8 +57,7 @@ ROOT_URLCONF = 'new_migrations.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,'templates'),'/home/niks/Programs/Django/vidLec/django/new_migrations/new_migrations/templates'
-],
+        'DIRS': [os.path.join(BASE_DIR,'templates'),],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
