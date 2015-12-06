@@ -28,4 +28,7 @@ urlpatterns = [
     url(r'^accounts/loggedin/$','new_migrations.views.loggedin'),
     url(r'^accounts/invalid/$','new_migrations.views.invalid_login'),
 
+    url(r'^accounts/register/$','new_migrations.views.register_user'),
+    url(r'^accounts/register_success/$','new_migrations.views.register_success'),
+
 ]
