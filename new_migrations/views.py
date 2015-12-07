@@ -2,7 +2,7 @@ from django.shortcuts import render_to_response
 from django.http import HttpResponseRedirect
 from django.contrib import auth
 from django.core.context_processors import csrf
-from django.contrib.auth.forms import UserCreationForm
+from forms import MyRegistrationForm
 
 def login(request):
     c = {}
@@ -34,7 +34,8 @@ def logout(request):
 
 def register_user(request):
     if request.method == 'POST': #check if data is posted or not
-        form = UserCreationForm(request.POST) #pass all values in the POST dictionary to UserCreationForm
+        form = MyRegistrationForm(request.POST) #pass all values in the POST dictionary to MyRegistrationForm
+
         if form.is_valid():
             form.save() #save details for new user
             return HttpResponseRedirect('/accounts/register_success')
@@ -42,7 +43,7 @@ def register_user(request):
     #what will be shown first time ie when data is not posted yet
     args = {}
     args.update(csrf(request))
-    args['form'] = UserCreationForm() #blank form, no POST information in it
+    args['form'] = MyRegistrationForm() #blank form, no POST information in it
     return render_to_response('register.html',args)
 
 
