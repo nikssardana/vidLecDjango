@@ -4,8 +4,11 @@
 
 <h2>Register</h2>
 <form action="/accounts/register/" method="post">{% csrf_token %}
+    <fieldset style="width:400px">
     {{form}}
     {# the form knows itself, how to display in HTML #}
+    <br><br>
     <input type="submit" value="Register">
+    </fieldset>
 </form>
 {% endblock %}
