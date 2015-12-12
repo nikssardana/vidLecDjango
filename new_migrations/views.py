@@ -34,7 +34,12 @@ def logout(request):
 
 def register_user(request):
     if request.method == 'POST': #check if data is posted or not
-        form = MyRegistrationForm(request.POST) #pass all values in the POST dictionary to MyRegistrationForm
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        email = request.POST.get('email')
+        balance = request.POST.get('balance')
+        user = UserDetails(username=username,password=password,email=email,balance=balance)
+        form = MyRegistrationForm(instance=user) #pass all values in the POST dictionary to MyRegistrationForm
 
         if form.is_valid():
             form.save() #save details for new user

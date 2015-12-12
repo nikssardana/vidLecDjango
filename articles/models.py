@@ -6,6 +6,8 @@ class Article(models.Model):
     likes = models.IntegerField()
     def __str__(self):
         return self.title
+    def __unicode__(self):
+        return self.title
 
 class Comment(models.Model):
     article = models.ForeignKey(Article)
