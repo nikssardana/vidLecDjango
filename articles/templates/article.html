@@ -4,7 +4,14 @@
         {{ article.title }}
     </h1>
     <p>{{ article.body }}</p>
+    {% if article.thumbnail %}
+        <p><img src = "/static/{{article.thumbnail}}" width="200"/></p>
+    {% endif %}
     <p>{{ article.likes }} people liked this article</p>
     <p><a href='/articles/like/{{article.id}}'>Like</a></p>
 </body>
 </html>
+
+/static/uploaded_files/1450252288_0202045_60-amazing-hd-1080p-dark-wallpaper-collection-52.jpg working
+
+/static/uploaded_files/uploaded_files/1450252288_0202045_60-amazing-hd-1080p-dark-wallpaper-collection-52.jpg not working

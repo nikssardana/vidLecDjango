@@ -104,3 +104,5 @@ USE_TZ = True
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )
 STATIC_ROOT = os.path.join(BASE_DIR, 'assets', )
 STATIC_URL = '/static/' #we will use url like 127.0.0.1/static/css/default.css to acces default.css file
+
+MEDIA_ROOT = '/home/niks/Programs/Django/vidLec/django/new_migrations/static'
